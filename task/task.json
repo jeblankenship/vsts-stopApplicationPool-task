@@ -1,0 +1,48 @@
+{
+    "id": "03FA79C5-FCB5-4427-8E8B-9C1E26466F8B",
+    "name": "stopApplicationPool",
+    "friendlyName": "Stop Application Pool On Remote Computer",
+    "description": "Task stops the Application Pool on the specified remote computer.",
+	"helpMarkDown": "[More Information](https://github.com/jeblankenship/vsts-stopApplicationPool-task#readme)",
+    "category": "Utility",
+    "visibility": [
+        "Build",
+		"Release"
+    ],
+    "author": "James Blankenship",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 2
+    },
+    "minimumAgentVersion": "1.92.0",
+    "inputs": [
+        {
+            "name": "server",
+            "type": "string",
+            "label": "Server",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Server to run command on."
+        },
+        {
+            "name": "appPoolName",
+            "type": "string",
+            "label": "Application Pool",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Application Pool to stop."
+        }
+    ],
+    "instanceNameFormat": "Stop Application Pool On Remote Computer",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\stop-applicationPool.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(System.DefaultWorkingDirectory)"
+		}
+    },
+    "messages": {
+        "failed": "Application Pool failed to stop."
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "manifestVersion": 1,
+    "id": "stopApplicationPool",
+    "name": "Stops Application Pool On Remote Computer",
+    "version": "0.1.2",
+    "public": true,
+    "publisher": "docscode",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Task stops application pool on remote computer.",
+    "categories": [
+        "Build and release"
+    ],
+    "tags": [
+        "release",
+        "build",
+        "token",
+        "rename"
+    ],
+    "links": {
+        "learn": {
+            "uri": "https://github.com/jeblankenship/vsts-stopApplicationPool-task#readme"
+        },
+        "support": {
+            "uri": "https://github.com/jeblankenship/vsts-stopApplicationPool-task/issues"  
+        }
+    },
+    "icons": {
+        "default": "images/extension-icon.png"
+    },
+    "branding": {
+        "color": "#1C3272",
+        "theme": "dark"
+    },
+    "screenshots": [
+        {
+            "path": "images/screenshot-01.png"
+        }
+    ],
+    "content": {
+        "details": {
+            "path": "README.md"
+        },
+        "license": {
+            "path": "LICENSE"
+        }
+    },
+    "files": [
+        {
+            "path": "task"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "stopApplicationPool-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "task"
+            }
+        }
+    ]
+}
